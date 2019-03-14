@@ -22,7 +22,7 @@ namespace GradeBook
             }
         }
         [JsonIgnore]
-        public char LetterGrade { get; set; }
+        public string LetterGrade { get; set; }
         [JsonIgnore]
         public double GPA { get; set; }
 

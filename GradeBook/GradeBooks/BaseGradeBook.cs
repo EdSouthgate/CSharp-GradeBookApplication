@@ -13,6 +13,7 @@ namespace GradeBook.GradeBooks
     {
         public string Name { get; set; }
         public List<Student> Students { get; set; }
+
         public GradeBookType Type { get; set; }
 
         public BaseGradeBook(string name)
@@ -105,19 +106,19 @@ namespace GradeBook.GradeBooks
             }
         }
 
-        public virtual double GetGPA(char letterGrade, StudentType studentType)
+        public virtual double GetGPA(string letterGrade, StudentType studentType)
         {
             switch (letterGrade)
             {
-                case 'A':
+                case "A":
                     return 4;
-                case 'B':
+                case "B":
                     return 3;
-                case 'C':
+                case "C":
                     return 2;
-                case 'D':
+                case "D":
                     return 1;
-                case 'F':
+                case "F":
                     return 0;
             }
             return 0;
@@ -205,18 +206,18 @@ namespace GradeBook.GradeBooks
             }
         }
 
-        public virtual char GetLetterGrade(double averageGrade)
+        public virtual string GetLetterGrade(double averageGrade)
         {
             if (averageGrade >= 90)
-                return 'A';
+                return 'A'.ToString();
             else if (averageGrade >= 80)
-                return 'B';
+                return 'B'.ToString();
             else if (averageGrade >= 70)
-                return 'C';
+                return 'C'.ToString();
             else if (averageGrade >= 60)
-                return 'D';
+                return 'D'.ToString();
             else
-                return 'F';
+                return 'F'.ToString();
         }
 
         /// <summary>
